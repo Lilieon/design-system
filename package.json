@@ -14,6 +14,8 @@
     "test": "pnpm test:scripts && pnpm test:components",
     "test:scripts": "node --test \"scripts/*.test.mjs\"",
     "test:components": "ng test",
+    "test:mcp": "node mcp/smoke.mjs",
+    "mcp": "node mcp/server.mjs",
     "start": "ng serve playground",
     "storybook": "ng run playground:storybook",
     "build:storybook": "ng run playground:build-storybook"
@@ -25,9 +27,11 @@
     "@angular/forms": "^22.2.0",
     "@angular/platform-browser": "^22.2.0",
     "@angular/router": "^22.2.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "class-variance-authority": "^0.7.1",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@angular/build": "^22.2.2",

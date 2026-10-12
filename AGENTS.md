@@ -19,8 +19,10 @@ skill, MCP). Everything is in English.
 | `pnpm test` | Run all tests (token scripts + Angular components) |
 | `pnpm test:scripts` | Run token script tests only (`node --test`) |
 | `pnpm test:components` | Run Angular component tests only (vitest) |
+| `pnpm test:mcp` | Smoke-test the MCP server (lists tools, calls each) |
 | `pnpm start` | Serve the playground on localhost |
 | `pnpm storybook` | Serve Storybook on port 6006 |
+| `pnpm mcp` | Run the design system MCP server (stdio) |
 
 `pnpm build:tokens` must run before the playground or Storybook — their CSS
 imports the generated files from `dist/`.

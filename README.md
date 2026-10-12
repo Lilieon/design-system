@@ -36,6 +36,28 @@ Then import the tokens in your global styles:
 Components are plain Angular standalone sources — you own the code after
 install; update by re-running the install with `--overwrite`.
 
+## AI agent integrations
+
+- **DESIGN.md** — the visual language, read by humans and AI agents.
+- **Skill** — installable agent skill:
+  `npx skills add Lilieon/design-system`
+- **MCP server** — dynamic access to tokens, components and a UI review
+  checklist. From a clone of this repository:
+
+```json
+{
+  "mcpServers": {
+    "design-system": {
+      "command": "node",
+      "args": ["/absolute/path/to/design-system/mcp/server.mjs"]
+    }
+  }
+}
+```
+
+Run it with `pnpm mcp` (after `pnpm install`). Tools:
+`list-tokens`, `get-tokens`, `get-component`, `review-ui`.
+
 ## Documentation
 
 - [DESIGN.md](DESIGN.md) — visual language and rules (for humans and AI agents)
