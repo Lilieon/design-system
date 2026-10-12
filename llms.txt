@@ -1,0 +1,31 @@
+# Design System
+
+> Lilian's personal design system: DTCG design tokens, Angular + Tailwind CSS
+> v4 components (copy-in, shadcn-style), and AI agent integrations. This file
+> helps AI agents discover and consume the system.
+
+## Docs
+
+- [DESIGN.md](https://lilieon.github.io/design-system/DESIGN.md): the visual
+  language — rules, principles and semantic tokens. Read this before building UI.
+- [Component catalog (Storybook)](https://lilieon.github.io/design-system/):
+  live component documentation.
+
+## Components
+
+Installable through the shadcn registry. Each component is a plain Angular
+standalone component source file, copied into your project.
+
+- [Registry index](https://lilieon.github.io/design-system/registry/index.json)
+- Example: `npx shadcn add https://lilieon.github.io/design-system/registry/button.json`
+- Available: alert, badge, button, card, input, label
+
+## Tokens
+
+- [tokens.css](https://lilieon.github.io/design-system/tokens.css): CSS custom
+  properties (`:root` light, `.dark` dark)
+- [tailwind-theme.css](https://lilieon.github.io/design-system/tailwind-theme.css):
+  Tailwind CSS v4 `@theme inline` mapping
+- Source of truth: DTCG JSON at
+  [github.com/Lilieon/design-system](https://github.com/Lilieon/design-system)
+  (`tokens/`)
