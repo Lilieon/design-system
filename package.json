@@ -6,7 +6,51 @@
   "license": "MIT",
   "packageManager": "pnpm@10.17.1",
   "scripts": {
-    "build": "node scripts/build-tokens.mjs",
-    "test": "node --test \"scripts/*.test.mjs\""
+    "ng": "ng",
+    "build": "pnpm build:tokens && pnpm build:playground",
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "build:playground": "ng build playground",
+    "test": "pnpm test:scripts && pnpm test:components",
+    "test:scripts": "node --test \"scripts/*.test.mjs\"",
+    "test:components": "ng test",
+    "start": "ng serve playground",
+    "storybook": "ng run playground:storybook",
+    "build:storybook": "ng run playground:build-storybook"
+  },
+  "dependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "class-variance-authority": "^0.7.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.2",
+    "@angular/cli": "^22.2.2",
+    "@angular/compiler-cli": "^22.2.0",
+    "@storybook/addon-docs": "^10.6.2",
+    "@storybook/angular": "^10.6.2",
+    "@tailwindcss/postcss": "^4.1.0",
+    "jsdom": "^30.0.0",
+    "prettier": "^3.8.1",
+    "storybook": "^10.6.2",
+    "tailwindcss": "^4.1.0",
+    "typescript": "~6.0.2",
+    "vitest": "^5.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "webpack": "5.111.1"
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "lmdb",
+      "msgpackr-extract"
+    ]
   }
 }

@@ -12,10 +12,18 @@ skill, MCP). Everything is in English.
 
 | Command | What it does |
 | ------- | ------------ |
-| `pnpm build` | Build tokens to `dist/` (CSS variables + Tailwind theme) |
-| `pnpm test` | Run script unit tests (`node --test`) |
+| `pnpm build` | Build tokens to `dist/` (CSS variables + Tailwind theme), then the Angular playground |
+| `pnpm build:tokens` | Build tokens only (`dist/tokens.css`, `dist/tailwind-theme.css`, DESIGN.md section) |
+| `pnpm build:playground` | Build the Angular playground app |
+| `pnpm build:storybook` | Build Storybook to `dist/storybook` |
+| `pnpm test` | Run all tests (token scripts + Angular components) |
+| `pnpm test:scripts` | Run token script tests only (`node --test`) |
+| `pnpm test:components` | Run Angular component tests only (vitest) |
+| `pnpm start` | Serve the playground on localhost |
+| `pnpm storybook` | Serve Storybook on port 6006 |
 
-This table grows as phases land (Angular playground, Storybook, registry, MCP).
+`pnpm build:tokens` must run before the playground or Storybook — their CSS
+imports the generated files from `dist/`.
 
 ## Conventions
 

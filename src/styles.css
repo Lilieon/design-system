@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "../dist/tokens.css";
+@import "../dist/tailwind-theme.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
