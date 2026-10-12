@@ -1,0 +1,12 @@
+{
+  "name": "@lilieon/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal design system: DTCG design tokens, Angular + Tailwind CSS v4 components, shadcn-style registry, and AI agent integrations.",
+  "license": "MIT",
+  "packageManager": "pnpm@10",
+  "scripts": {
+    "build": "node scripts/build-tokens.mjs",
+    "test": "node --test scripts/"
+  }
+}
