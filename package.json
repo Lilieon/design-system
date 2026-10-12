@@ -7,8 +7,9 @@
   "packageManager": "pnpm@10.17.1",
   "scripts": {
     "ng": "ng",
-    "build": "pnpm build:tokens && pnpm build:playground",
+    "build": "pnpm build:tokens && pnpm build:registry && pnpm build:playground",
     "build:tokens": "node scripts/build-tokens.mjs",
+    "build:registry": "node scripts/build-registry.mjs",
     "build:playground": "ng build playground",
     "test": "pnpm test:scripts && pnpm test:components",
     "test:scripts": "node --test \"scripts/*.test.mjs\"",
