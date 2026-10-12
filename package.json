@@ -4,9 +4,9 @@
   "private": true,
   "description": "Personal design system: DTCG design tokens, Angular + Tailwind CSS v4 components, shadcn-style registry, and AI agent integrations.",
   "license": "MIT",
-  "packageManager": "pnpm@10",
+  "packageManager": "pnpm@10.17.1",
   "scripts": {
     "build": "node scripts/build-tokens.mjs",
-    "test": "node --test scripts/"
+    "test": "node --test \"scripts/*.test.mjs\""
   }
 }

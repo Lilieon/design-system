@@ -1,0 +1,23 @@
+{
+  "bg": { "$type": "color", "$value": "{color.neutral.950}" },
+  "fg": { "$type": "color", "$value": "{color.neutral.50}" },
+  "card": { "$type": "color", "$value": "{color.neutral.900}" },
+  "card-fg": { "$type": "color", "$value": "{color.neutral.50}" },
+  "muted": { "$type": "color", "$value": "{color.neutral.800}" },
+  "muted-fg": { "$type": "color", "$value": "{color.neutral.400}" },
+  "border": { "$type": "color", "$value": "{color.neutral.800}" },
+  "input": { "$type": "color", "$value": "{color.neutral.700}" },
+  "ring": { "$type": "color", "$value": "{color.neutral.300}" },
+  "primary": { "$type": "color", "$value": "{color.neutral.50}" },
+  "primary-fg": { "$type": "color", "$value": "{color.neutral.900}" },
+  "secondary": { "$type": "color", "$value": "{color.neutral.800}" },
+  "secondary-fg": { "$type": "color", "$value": "{color.neutral.100}" },
+  "accent": { "$type": "color", "$value": "{color.blue.500}" },
+  "accent-fg": { "$type": "color", "$value": "{color.neutral.950}" },
+  "destructive": { "$type": "color", "$value": "{color.red.500}" },
+  "destructive-fg": { "$type": "color", "$value": "{color.neutral.950}" },
+  "success": { "$type": "color", "$value": "{color.green.500}" },
+  "success-fg": { "$type": "color", "$value": "{color.neutral.950}" },
+  "warning": { "$type": "color", "$value": "{color.amber.500}" },
+  "warning-fg": { "$type": "color", "$value": "{color.neutral.950}" }
+}
