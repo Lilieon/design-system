@@ -1,13 +1,45 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  DsAlertComponent,
+  DsAlertDescriptionComponent,
+  DsAlertTitleComponent,
+  DsBadgeComponent,
+  DsButtonComponent,
+  DsCardComponent,
+  DsCardContentComponent,
+  DsCardDescriptionComponent,
+  DsCardFooterComponent,
+  DsCardHeaderComponent,
+  DsCardTitleComponent,
+  DsInputComponent,
+  DsLabelComponent,
+} from '@ds/ui';
 
 @Component({
-  selector: 'app-root',
+  imports: [
+    DsAlertComponent,
+    DsAlertDescriptionComponent,
+    DsAlertTitleComponent,
+    DsBadgeComponent,
+    DsButtonComponent,
+    DsCardComponent,
+    DsCardContentComponent,
+    DsCardDescriptionComponent,
+    DsCardFooterComponent,
+    DsCardHeaderComponent,
+    DsCardTitleComponent,
+    DsInputComponent,
+    DsLabelComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <main class="mx-auto max-w-3xl px-6 py-12">
-      <h1 class="text-3xl font-semibold tracking-tight">Design System Playground</h1>
-      <p class="mt-2 text-sm text-muted-fg">Component gallery lands with the first components.</p>
-    </main>
-  `,
+  templateUrl: './app.html',
 })
-export class App {}
+export class App {
+  protected readonly dark = signal(false);
+
+  protected toggleDark(): void {
+    const next = !this.dark();
+    this.dark.set(next);
+    document.documentElement.classList.toggle('dark', next);
+  }
+}
