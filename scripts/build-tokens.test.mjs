@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -93,7 +93,8 @@ test("buildDesignMdSection lists every semantic token", () => {
 });
 
 test("end-to-end: pnpm build writes dist/ files", () => {
-  rmSync(join(ROOT, "dist"), { recursive: true, force: true });
+  // No rmSync(dist): node --test runs files in parallel and the registry
+  // tests read dist/registry — wiping dist here races them.
   const run = spawnSync(process.execPath, [join(ROOT, "scripts", "build-tokens.mjs")], { encoding: "utf8" });
   assert.equal(run.status, 0, run.stderr);
   assert.ok(existsSync(join(ROOT, "dist", "tokens.css")));
