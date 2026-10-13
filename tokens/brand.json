@@ -1,144 +1,460 @@
 {
   "color": {
     "neutral": {
-      "$description": "Charte: neutral surfaces (backgrounds, cards, borders, text). Zinc-tinted gray.",
-      "0": { "$type": "color", "$value": "#ffffff" },
-      "50": { "$type": "color", "$value": "#fafafa" },
-      "100": { "$type": "color", "$value": "#f4f4f5" },
-      "200": { "$type": "color", "$value": "#e4e4e7" },
-      "300": { "$type": "color", "$value": "#d4d4d8" },
-      "400": { "$type": "color", "$value": "#a1a1aa" },
-      "500": { "$type": "color", "$value": "#71717a" },
-      "600": { "$type": "color", "$value": "#52525b" },
-      "700": { "$type": "color", "$value": "#3f3f46" },
-      "800": { "$type": "color", "$value": "#27272a" },
-      "900": { "$type": "color", "$value": "#18181b" },
-      "950": { "$type": "color", "$value": "#09090b" },
-      "1000": { "$type": "color", "$value": "#000000" }
+      "$description": "Charte (foret): cool gray surfaces.",
+      "0": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#f9fafb"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#f3f4f6"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#e5e7eb"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#d1d5db"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#9ca3af"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#6b7280"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#4b5563"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#374151"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#1f2937"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#111827"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#030712"
+      },
+      "1000": {
+        "$type": "color",
+        "$value": "#000000"
+      }
     },
     "brand": {
-      "$description": "Charte: the interactive/accent ramp (links, focus accents, accent buttons). Currently blue.",
-      "50": { "$type": "color", "$value": "#eff6ff" },
-      "100": { "$type": "color", "$value": "#dbeafe" },
-      "200": { "$type": "color", "$value": "#bfdbfe" },
-      "300": { "$type": "color", "$value": "#93c5fd" },
-      "400": { "$type": "color", "$value": "#60a5fa" },
-      "500": { "$type": "color", "$value": "#3b82f6" },
-      "600": { "$type": "color", "$value": "#2563eb" },
-      "700": { "$type": "color", "$value": "#1d4ed8" },
-      "800": { "$type": "color", "$value": "#1e40af" },
-      "900": { "$type": "color", "$value": "#1e3a8a" },
-      "950": { "$type": "color", "$value": "#172554" }
+      "$description": "Charte (foret): forest-green interactive ramp — natural, grounded.",
+      "50": {
+        "$type": "color",
+        "$value": "#ecfdf5"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#d1fae5"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#a7f3d0"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#6ee7b7"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#34d399"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#10b981"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#047857"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#065f46"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#064e3b"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#022c22"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#01221a"
+      }
     },
     "success": {
       "$description": "Charte: positive status ramp (success messages, confirmations).",
-      "50": { "$type": "color", "$value": "#f0fdf4" },
-      "100": { "$type": "color", "$value": "#dcfce7" },
-      "200": { "$type": "color", "$value": "#bbf7d0" },
-      "300": { "$type": "color", "$value": "#86efac" },
-      "400": { "$type": "color", "$value": "#4ade80" },
-      "500": { "$type": "color", "$value": "#22c55e" },
-      "600": { "$type": "color", "$value": "#16a34a" },
-      "700": { "$type": "color", "$value": "#15803d" },
-      "800": { "$type": "color", "$value": "#166534" },
-      "900": { "$type": "color", "$value": "#14532d" },
-      "950": { "$type": "color", "$value": "#052e16" }
+      "50": {
+        "$type": "color",
+        "$value": "#f0fdf4"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#dcfce7"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#bbf7d0"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#86efac"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#4ade80"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#22c55e"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#16a34a"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#15803d"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#166534"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#14532d"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#052e16"
+      }
     },
     "warning": {
       "$description": "Charte: caution status ramp (warnings, risky states).",
-      "50": { "$type": "color", "$value": "#fffbeb" },
-      "100": { "$type": "color", "$value": "#fef3c7" },
-      "200": { "$type": "color", "$value": "#fde68a" },
-      "300": { "$type": "color", "$value": "#fcd34d" },
-      "400": { "$type": "color", "$value": "#fbbf24" },
-      "500": { "$type": "color", "$value": "#f59e0b" },
-      "600": { "$type": "color", "$value": "#d97706" },
-      "700": { "$type": "color", "$value": "#b45309" },
-      "800": { "$type": "color", "$value": "#92400e" },
-      "900": { "$type": "color", "$value": "#78350f" },
-      "950": { "$type": "color", "$value": "#451a03" }
+      "50": {
+        "$type": "color",
+        "$value": "#fffbeb"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#fef3c7"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#fde68a"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#fcd34d"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#fbbf24"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#f59e0b"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#d97706"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#b45309"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#92400e"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#78350f"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#451a03"
+      }
     },
     "danger": {
       "$description": "Charte: destructive status ramp (errors, destructive actions).",
-      "50": { "$type": "color", "$value": "#fef2f2" },
-      "100": { "$type": "color", "$value": "#fee2e2" },
-      "200": { "$type": "color", "$value": "#fecaca" },
-      "300": { "$type": "color", "$value": "#fca5a5" },
-      "400": { "$type": "color", "$value": "#f87171" },
-      "500": { "$type": "color", "$value": "#ef4444" },
-      "600": { "$type": "color", "$value": "#dc2626" },
-      "700": { "$type": "color", "$value": "#b91c1c" },
-      "800": { "$type": "color", "$value": "#991b1b" },
-      "900": { "$type": "color", "$value": "#7f1d1d" },
-      "950": { "$type": "color", "$value": "#450a0a" }
+      "50": {
+        "$type": "color",
+        "$value": "#fef2f2"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#fee2e2"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#fecaca"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#fca5a5"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#f87171"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#ef4444"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#dc2626"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#b91c1c"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#991b1b"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#7f1d1d"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#450a0a"
+      }
     }
   },
   "font": {
     "$description": "Charte: type families. Inter for UI, system mono for code.",
-    "sans": { "$type": "fontFamily", "$value": ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"] },
-    "mono": { "$type": "fontFamily", "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", "monospace"] }
+    "sans": {
+      "$type": "fontFamily",
+      "$value": [
+        "ui-rounded",
+        "SF Pro Rounded",
+        "Nunito",
+        "system-ui",
+        "sans-serif"
+      ]
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": [
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "Consolas",
+        "Liberation Mono",
+        "monospace"
+      ]
+    }
   },
   "fontSize": {
     "$description": "Charte: type scale (12 to 36px), compact and UI-oriented.",
-    "xs": { "$type": "dimension", "$value": "12px" },
-    "sm": { "$type": "dimension", "$value": "14px" },
-    "base": { "$type": "dimension", "$value": "16px" },
-    "lg": { "$type": "dimension", "$value": "18px" },
-    "xl": { "$type": "dimension", "$value": "20px" },
-    "2xl": { "$type": "dimension", "$value": "24px" },
-    "3xl": { "$type": "dimension", "$value": "30px" },
-    "4xl": { "$type": "dimension", "$value": "36px" }
+    "xs": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "14px"
+    },
+    "base": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "18px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "20px"
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "3xl": {
+      "$type": "dimension",
+      "$value": "30px"
+    },
+    "4xl": {
+      "$type": "dimension",
+      "$value": "36px"
+    }
   },
   "fontWeight": {
     "$description": "Charte: four weights only — hierarchy by weight is restrained.",
-    "regular": { "$type": "fontWeight", "$value": 400 },
-    "medium": { "$type": "fontWeight", "$value": 500 },
-    "semibold": { "$type": "fontWeight", "$value": 600 },
-    "bold": { "$type": "fontWeight", "$value": 700 }
+    "regular": {
+      "$type": "fontWeight",
+      "$value": 400
+    },
+    "medium": {
+      "$type": "fontWeight",
+      "$value": 500
+    },
+    "semibold": {
+      "$type": "fontWeight",
+      "$value": 600
+    },
+    "bold": {
+      "$type": "fontWeight",
+      "$value": 700
+    }
   },
   "lineHeight": {
     "$description": "Charte: line heights tighten as text size grows.",
-    "tight": { "$type": "number", "$value": 1.25 },
-    "snug": { "$type": "number", "$value": 1.375 },
-    "normal": { "$type": "number", "$value": 1.5 },
-    "relaxed": { "$type": "number", "$value": 1.625 }
+    "tight": {
+      "$type": "number",
+      "$value": 1.25
+    },
+    "snug": {
+      "$type": "number",
+      "$value": 1.375
+    },
+    "normal": {
+      "$type": "number",
+      "$value": 1.5
+    },
+    "relaxed": {
+      "$type": "number",
+      "$value": 1.625
+    }
   },
   "radius": {
     "$description": "Charte: quiet, moderately rounded surfaces (sm for controls, lg for cards).",
-    "none": { "$type": "dimension", "$value": "0px" },
-    "sm": { "$type": "dimension", "$value": "6px" },
-    "md": { "$type": "dimension", "$value": "8px" },
-    "lg": { "$type": "dimension", "$value": "12px" },
-    "xl": { "$type": "dimension", "$value": "16px" },
-    "full": { "$type": "dimension", "$value": "9999px" }
+    "none": {
+      "$type": "dimension",
+      "$value": "0px"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "10px"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "14px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "20px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "28px"
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "9999px"
+    }
   },
   "shadow": {
     "$description": "Charte: subtle depth only — shadows whisper, borders speak.",
-    "sm": { "$type": "shadow", "$value": [{ "x": 0, "y": 1, "blur": 2, "spread": 0, "color": "rgba(0, 0, 0, 0.05)" }] },
+    "sm": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "x": 0,
+          "y": 1,
+          "blur": 2,
+          "spread": 0,
+          "color": "rgba(0, 0, 0, 0.05)"
+        }
+      ]
+    },
     "md": {
       "$type": "shadow",
       "$value": [
-        { "x": 0, "y": 1, "blur": 3, "spread": 0, "color": "rgba(0, 0, 0, 0.08)" },
-        { "x": 0, "y": 2, "blur": 6, "spread": -1, "color": "rgba(0, 0, 0, 0.06)" }
+        {
+          "x": 0,
+          "y": 1,
+          "blur": 3,
+          "spread": 0,
+          "color": "rgba(0, 0, 0, 0.08)"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "blur": 6,
+          "spread": -1,
+          "color": "rgba(0, 0, 0, 0.06)"
+        }
       ]
     },
     "lg": {
       "$type": "shadow",
       "$value": [
-        { "x": 0, "y": 4, "blur": 6, "spread": -1, "color": "rgba(0, 0, 0, 0.08)" },
-        { "x": 0, "y": 10, "blur": 15, "spread": -3, "color": "rgba(0, 0, 0, 0.08)" }
+        {
+          "x": 0,
+          "y": 4,
+          "blur": 6,
+          "spread": -1,
+          "color": "rgba(0, 0, 0, 0.08)"
+        },
+        {
+          "x": 0,
+          "y": 10,
+          "blur": 15,
+          "spread": -3,
+          "color": "rgba(0, 0, 0, 0.08)"
+        }
       ]
     }
   },
   "duration": {
     "$description": "Charte: quick, purposeful motion (120–280ms).",
-    "fast": { "$type": "duration", "$value": "120ms" },
-    "base": { "$type": "duration", "$value": "180ms" },
-    "slow": { "$type": "duration", "$value": "280ms" }
+    "fast": {
+      "$type": "duration",
+      "$value": "140ms"
+    },
+    "base": {
+      "$type": "duration",
+      "$value": "220ms"
+    },
+    "slow": {
+      "$type": "duration",
+      "$value": "340ms"
+    }
   },
   "easing": {
     "$description": "Charte: standard ease for most transitions, emphasized for large surfaces.",
-    "standard": { "$type": "cubicBezier", "$value": [0.4, 0, 0.2, 1] },
-    "emphasized": { "$type": "cubicBezier", "$value": [0.2, 0, 0, 1] }
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.4,
+        0,
+        0.2,
+        1
+      ]
+    },
+    "emphasized": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.2,
+        0,
+        0,
+        1
+      ]
+    }
   }
 }
