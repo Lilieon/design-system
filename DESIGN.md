@@ -37,7 +37,7 @@ come from design tokens (W3C DTCG format) built to CSS custom properties.
 ## Rules for AI agents
 
 - When generating UI, compose from the component set first; build new
-  primitives only when nothing fits.
+  charte ramps only when nothing fits.
 - Buttons: exactly one `primary` per view. Destructive actions use
   `destructive`, never red text alone.
 - Text: `text-foreground` for body, `text-muted-foreground` for secondary,
@@ -45,7 +45,7 @@ come from design tokens (W3C DTCG format) built to CSS custom properties.
 - Focus states are mandatory on every interactive element — never remove the
   outline without adding a `ring` equivalent.
 - Icons: stroke icons (lucide), 16px inline / 20px standalone, stroke-width 2.
-- Layout: 4px spacing rhythm (`--ds-space-*`), page gutters ≥ 24px, cards use
+- Layout: 4px spacing rhythm (Tailwind spacing scale), page gutters ≥ 24px, cards use
   `--ds-radius-lg` and `border-border`.
 - When reviewing UI, check: contrast, focus visibility, hierarchy (one
   primary), spacing rhythm, dark mode, empty/error/loading states.
@@ -79,20 +79,20 @@ Light and dark themes. In Tailwind these are exposed as utilities
 | `--ds-primary-fg` | `#fafafa` | `#18181b` | `{color.neutral.50}` |
 | `--ds-secondary` | `#f4f4f5` | `#27272a` | `{color.neutral.100}` |
 | `--ds-secondary-fg` | `#18181b` | `#f4f4f5` | `{color.neutral.900}` |
-| `--ds-accent` | `#2563eb` | `#3b82f6` | `{color.blue.600}` |
+| `--ds-accent` | `#2563eb` | `#3b82f6` | `{color.brand.600}` |
 | `--ds-accent-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
-| `--ds-destructive` | `#dc2626` | `#ef4444` | `{color.red.600}` |
+| `--ds-destructive` | `#dc2626` | `#ef4444` | `{color.danger.600}` |
 | `--ds-destructive-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
-| `--ds-success` | `#16a34a` | `#22c55e` | `{color.green.600}` |
+| `--ds-success` | `#16a34a` | `#22c55e` | `{color.success.600}` |
 | `--ds-success-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
-| `--ds-warning` | `#f59e0b` | `#f59e0b` | `{color.amber.500}` |
+| `--ds-warning` | `#f59e0b` | `#f59e0b` | `{color.warning.500}` |
 | `--ds-warning-fg` | `#09090b` | `#09090b` | `{color.neutral.950}` |
 
 ### Primitive scales
 
-- 57 primitive color steps across 5 hues (neutral, blue, green, amber, red)
-- 45 primitive values for spacing, radius, typography, shadows, motion
-- Full source: [`tokens/primitives.json`](tokens/primitives.json) (DTCG format)
+- 57 charte color steps across 5 role ramps (neutral, brand, success, warning, danger)
+- 32 charte values for typography, radius, shadows, motion
+- Full source: [`tokens/brand.json`](tokens/brand.json) (DTCG format)
 
 <!-- tokens:end -->
 

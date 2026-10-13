@@ -1,6 +1,7 @@
 {
   "color": {
     "neutral": {
+      "$description": "Charte: neutral surfaces (backgrounds, cards, borders, text). Zinc-tinted gray.",
       "0": { "$type": "color", "$value": "#ffffff" },
       "50": { "$type": "color", "$value": "#fafafa" },
       "100": { "$type": "color", "$value": "#f4f4f5" },
@@ -15,7 +16,8 @@
       "950": { "$type": "color", "$value": "#09090b" },
       "1000": { "$type": "color", "$value": "#000000" }
     },
-    "blue": {
+    "brand": {
+      "$description": "Charte: the interactive/accent ramp (links, focus accents, accent buttons). Currently blue.",
       "50": { "$type": "color", "$value": "#eff6ff" },
       "100": { "$type": "color", "$value": "#dbeafe" },
       "200": { "$type": "color", "$value": "#bfdbfe" },
@@ -28,7 +30,8 @@
       "900": { "$type": "color", "$value": "#1e3a8a" },
       "950": { "$type": "color", "$value": "#172554" }
     },
-    "green": {
+    "success": {
+      "$description": "Charte: positive status ramp (success messages, confirmations).",
       "50": { "$type": "color", "$value": "#f0fdf4" },
       "100": { "$type": "color", "$value": "#dcfce7" },
       "200": { "$type": "color", "$value": "#bbf7d0" },
@@ -41,7 +44,8 @@
       "900": { "$type": "color", "$value": "#14532d" },
       "950": { "$type": "color", "$value": "#052e16" }
     },
-    "amber": {
+    "warning": {
+      "$description": "Charte: caution status ramp (warnings, risky states).",
       "50": { "$type": "color", "$value": "#fffbeb" },
       "100": { "$type": "color", "$value": "#fef3c7" },
       "200": { "$type": "color", "$value": "#fde68a" },
@@ -54,7 +58,8 @@
       "900": { "$type": "color", "$value": "#78350f" },
       "950": { "$type": "color", "$value": "#451a03" }
     },
-    "red": {
+    "danger": {
+      "$description": "Charte: destructive status ramp (errors, destructive actions).",
       "50": { "$type": "color", "$value": "#fef2f2" },
       "100": { "$type": "color", "$value": "#fee2e2" },
       "200": { "$type": "color", "$value": "#fecaca" },
@@ -68,34 +73,13 @@
       "950": { "$type": "color", "$value": "#450a0a" }
     }
   },
-  "space": {
-    "0": { "$type": "dimension", "$value": "0px" },
-    "1": { "$type": "dimension", "$value": "4px" },
-    "2": { "$type": "dimension", "$value": "8px" },
-    "3": { "$type": "dimension", "$value": "12px" },
-    "4": { "$type": "dimension", "$value": "16px" },
-    "5": { "$type": "dimension", "$value": "20px" },
-    "6": { "$type": "dimension", "$value": "24px" },
-    "8": { "$type": "dimension", "$value": "32px" },
-    "10": { "$type": "dimension", "$value": "40px" },
-    "12": { "$type": "dimension", "$value": "48px" },
-    "16": { "$type": "dimension", "$value": "64px" },
-    "20": { "$type": "dimension", "$value": "80px" },
-    "24": { "$type": "dimension", "$value": "96px" }
-  },
-  "radius": {
-    "none": { "$type": "dimension", "$value": "0px" },
-    "sm": { "$type": "dimension", "$value": "6px" },
-    "md": { "$type": "dimension", "$value": "8px" },
-    "lg": { "$type": "dimension", "$value": "12px" },
-    "xl": { "$type": "dimension", "$value": "16px" },
-    "full": { "$type": "dimension", "$value": "9999px" }
-  },
   "font": {
+    "$description": "Charte: type families. Inter for UI, system mono for code.",
     "sans": { "$type": "fontFamily", "$value": ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"] },
     "mono": { "$type": "fontFamily", "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", "monospace"] }
   },
   "fontSize": {
+    "$description": "Charte: type scale (12 to 36px), compact and UI-oriented.",
     "xs": { "$type": "dimension", "$value": "12px" },
     "sm": { "$type": "dimension", "$value": "14px" },
     "base": { "$type": "dimension", "$value": "16px" },
@@ -106,18 +90,30 @@
     "4xl": { "$type": "dimension", "$value": "36px" }
   },
   "fontWeight": {
+    "$description": "Charte: four weights only — hierarchy by weight is restrained.",
     "regular": { "$type": "fontWeight", "$value": 400 },
     "medium": { "$type": "fontWeight", "$value": 500 },
     "semibold": { "$type": "fontWeight", "$value": 600 },
     "bold": { "$type": "fontWeight", "$value": 700 }
   },
   "lineHeight": {
+    "$description": "Charte: line heights tighten as text size grows.",
     "tight": { "$type": "number", "$value": 1.25 },
     "snug": { "$type": "number", "$value": 1.375 },
     "normal": { "$type": "number", "$value": 1.5 },
     "relaxed": { "$type": "number", "$value": 1.625 }
   },
+  "radius": {
+    "$description": "Charte: quiet, moderately rounded surfaces (sm for controls, lg for cards).",
+    "none": { "$type": "dimension", "$value": "0px" },
+    "sm": { "$type": "dimension", "$value": "6px" },
+    "md": { "$type": "dimension", "$value": "8px" },
+    "lg": { "$type": "dimension", "$value": "12px" },
+    "xl": { "$type": "dimension", "$value": "16px" },
+    "full": { "$type": "dimension", "$value": "9999px" }
+  },
   "shadow": {
+    "$description": "Charte: subtle depth only — shadows whisper, borders speak.",
     "sm": { "$type": "shadow", "$value": [{ "x": 0, "y": 1, "blur": 2, "spread": 0, "color": "rgba(0, 0, 0, 0.05)" }] },
     "md": {
       "$type": "shadow",
@@ -135,11 +131,13 @@
     }
   },
   "duration": {
+    "$description": "Charte: quick, purposeful motion (120–280ms).",
     "fast": { "$type": "duration", "$value": "120ms" },
     "base": { "$type": "duration", "$value": "180ms" },
     "slow": { "$type": "duration", "$value": "280ms" }
   },
   "easing": {
+    "$description": "Charte: standard ease for most transitions, emphasized for large surfaces.",
     "standard": { "$type": "cubicBezier", "$value": [0.4, 0, 0.2, 1] },
     "emphasized": { "$type": "cubicBezier", "$value": [0.2, 0, 0, 1] }
   }

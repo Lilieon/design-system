@@ -14,7 +14,7 @@ const names = tools.tools.map((t) => t.name).sort();
 assert.deepEqual(names, ["get-component", "get-tokens", "list-tokens", "review-ui"]);
 
 const catalog = await client.callTool({ name: "list-tokens", arguments: {} });
-assert.match(catalog.content[0].text, /primitives/);
+assert.match(catalog.content[0].text, /charte/);
 
 const dark = await client.callTool({ name: "get-tokens", arguments: { category: "semantic-dark" } });
 assert.match(dark.content[0].text, /--ds-bg/);

@@ -49,7 +49,7 @@ test("renderShadow composes CSS box-shadow", () => {
 });
 
 test("buildTokensCss emits primitives, light :root and .dark overrides", () => {
-  const css = buildTokensCss(read("primitives.json"), read("semantic/light.json"), read("semantic/dark.json"));
+  const css = buildTokensCss(read("brand.json"), read("semantic/light.json"), read("semantic/dark.json"));
   assert.match(css, /^:root \{/m);
   assert.match(css, /--ds-color-neutral-950: #09090b;/);
   assert.match(css, /--ds-bg: #fafafa;/);
@@ -59,7 +59,7 @@ test("buildTokensCss emits primitives, light :root and .dark overrides", () => {
 });
 
 test("buildTailwindTheme maps Tailwind v4 namespaces", () => {
-  const theme = buildTailwindTheme(read("primitives.json"), read("semantic/light.json"));
+  const theme = buildTailwindTheme(read("brand.json"), read("semantic/light.json"));
   assert.match(theme, /@theme inline \{/);
   assert.match(theme, /--color-neutral-50: var\(--ds-color-neutral-50\);/);
   assert.match(theme, /--text-base: var\(--ds-font-size-base\);/);
@@ -81,14 +81,14 @@ test("light and dark semantic token sets match exactly", () => {
 
 test("buildDesignMdSection lists every semantic token", () => {
   const section = buildDesignMdSection(
-    read("primitives.json"),
+    read("brand.json"),
     read("semantic/light.json"),
     read("semantic/dark.json"),
   );
   assert.match(section, /<!-- tokens:begin -->/);
   assert.match(section, /<!-- tokens:end -->/);
   assert.match(section, /\| `--ds-primary` \|/);
-  assert.match(section, /tokens\/primitives\.json/);
+  assert.match(section, /tokens\/brand\.json/);
 });
 
 test("end-to-end: pnpm build writes dist/ files", () => {

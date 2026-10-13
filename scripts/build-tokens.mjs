@@ -219,9 +219,9 @@ export function buildDesignMdSection(primitives, light, dark) {
     "",
     "### Primitive scales",
     "",
-    `- ${colorCount} primitive color steps across 5 hues (neutral, blue, green, amber, red)`,
-    `- ${scaleCount} primitive values for spacing, radius, typography, shadows, motion`,
-    "- Full source: [`tokens/primitives.json`](tokens/primitives.json) (DTCG format)",
+    `- ${colorCount} charte color steps across 5 role ramps (neutral, brand, success, warning, danger)`,
+    `- ${scaleCount} charte values for typography, radius, shadows, motion`,
+    "- Full source: [`tokens/brand.json`](tokens/brand.json) (DTCG format)",
     "",
     "<!-- tokens:end -->",
   ].join("\n");
@@ -239,14 +239,14 @@ export function updateDesignMd(section) {
 }
 
 function main() {
-  const primitives = readJson(join(TOKENS_DIR, "primitives.json"));
+  const brand = readJson(join(TOKENS_DIR, "brand.json"));
   const light = readJson(join(TOKENS_DIR, "semantic", "light.json"));
   const dark = readJson(join(TOKENS_DIR, "semantic", "dark.json"));
 
   mkdirSync(DIST_DIR, { recursive: true });
-  writeFileSync(join(DIST_DIR, "tokens.css"), buildTokensCss(primitives, light, dark));
-  writeFileSync(join(DIST_DIR, "tailwind-theme.css"), buildTailwindTheme(primitives, light));
-  const designUpdated = updateDesignMd(buildDesignMdSection(primitives, light, dark));
+  writeFileSync(join(DIST_DIR, "tokens.css"), buildTokensCss(brand, light, dark));
+  writeFileSync(join(DIST_DIR, "tailwind-theme.css"), buildTailwindTheme(brand, light));
+  const designUpdated = updateDesignMd(buildDesignMdSection(brand, light, dark));
 
   console.log("Built dist/tokens.css, dist/tailwind-theme.css" + (designUpdated ? ", DESIGN.md tokens section" : ""));
 }

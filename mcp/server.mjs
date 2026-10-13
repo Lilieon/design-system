@@ -19,16 +19,16 @@ function readJson(path) {
   return JSON.parse(readFileSync(path, "utf8"));
 }
 
-function primitivesFlat() {
-  return flattenTokens(readJson(join(TOKENS_DIR, "primitives.json")));
+function brandFlat() {
+  return flattenTokens(readJson(join(TOKENS_DIR, "brand.json")));
 }
 
 function resolvedSemantic(file) {
-  const primitives = primitivesFlat();
+  const brand = brandFlat();
   const flat = flattenTokens(readJson(join(TOKENS_DIR, "semantic", `${file}.json`)));
   const out = {};
   for (const [key, entry] of Object.entries(flat)) {
-    const value = resolveValue(primitives, entry.$value.slice(1, -1));
+    const value = resolveValue(brand, entry.$value.slice(1, -1));
     out[`--ds-${toKebab(key)}`] = renderValue(entry.$type, value);
   }
   return out;
@@ -51,13 +51,13 @@ server.registerTool(
   {
     title: "List token categories",
     description:
-      "List the design system token categories (primitives and semantic themes) with their value counts. Use this first to discover what get-tokens can return.",
+      "List the design system token categories (charte ramps and semantic themes) with their value counts. Use this first to discover what get-tokens can return.",
     inputSchema: {},
   },
   async () => {
-    const primitives = primitivesFlat();
+    const brand = brandFlat();
     const groups = {};
-    for (const path of Object.keys(primitives)) {
+    for (const path of Object.keys(brand)) {
       const group = path.split(".")[0];
       groups[group] = (groups[group] ?? 0) + 1;
     }
@@ -68,7 +68,7 @@ server.registerTool(
           type: "text",
           text: JSON.stringify(
             {
-              primitives: groups,
+              charte: groups,
               semantic: {
                 light: { variables: light, description: "applied on :root" },
                 dark: { variables: light, description: "applied under the .dark class" },
@@ -88,15 +88,15 @@ server.registerTool(
   {
     title: "Get token values",
     description:
-      "Get resolved token values. category: 'primitives' (raw scales), 'semantic-light' or 'semantic-dark' (resolved CSS variables --ds-*). Semantic tokens are also exposed as Tailwind utilities (bg-primary, text-muted-foreground, …).",
+      "Get resolved token values. category: 'brand' (raw charte ramps), 'semantic-light' or 'semantic-dark' (resolved CSS variables --ds-*). Semantic tokens are also exposed as Tailwind utilities (bg-primary, text-muted-foreground, …).",
     inputSchema: {
-      category: z.enum(["primitives", "semantic-light", "semantic-dark"]),
+      category: z.enum(["brand", "semantic-light", "semantic-dark"]),
     },
   },
   async ({ category }) => {
     let values;
-    if (category === "primitives") {
-      const flat = primitivesFlat();
+    if (category === "brand") {
+      const flat = brandFlat();
       values = Object.fromEntries(
         Object.entries(flat).map(([path, entry]) => [
           `--ds-${toKebab(path)}`,
@@ -158,7 +158,7 @@ const REVIEW_CHECKLIST = [
     area: "Tokens and consistency",
     checks: [
       "No hardcoded colors, spacing, radii, shadows or durations — only semantic tokens / utilities",
-      "4px spacing rhythm (--ds-space-*); page gutters at least 24px",
+      "4px spacing rhythm (Tailwind spacing scale); page gutters at least 24px",
       "Cards use rounded-lg, border-border, bg-card",
       "Motion: 120-280ms, standard easing, opacity/transform only",
     ],
