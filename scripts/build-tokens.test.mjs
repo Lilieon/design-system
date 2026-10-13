@@ -53,7 +53,7 @@ test("buildTokensCss emits primitives, light :root and .dark overrides", () => {
   const css = buildTokensCss(read("brand.json"), read("semantic/light.json"), read("semantic/dark.json"));
   assert.match(css, /^:root \{/m);
   assert.match(css, /--ds-color-neutral-950: #09090b;/);
-  assert.match(css, /--ds-bg: var(--ds-color-neutral-50);/);
+  assert.match(css, /--ds-bg: var\(--ds-color-neutral-50\);/);
   assert.match(css, /\.dark \{\n(?:.|\n)*--ds-bg: var\(--ds-color-neutral-950\);/);
   assert.match(css, /--ds-shadow-sm: 0px 1px 2px 0px rgba\(0, 0, 0, 0.05\);/);
   assert.match(css, /--ds-font-sans: "Inter", system-ui/);
