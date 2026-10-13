@@ -11,7 +11,12 @@ await client.connect(transport);
 
 const tools = await client.listTools();
 const names = tools.tools.map((t) => t.name).sort();
-assert.deepEqual(names, ["get-component", "get-tokens", "list-tokens", "review-ui"]);
+assert.deepEqual(names, ["get-brand", "get-component", "get-tokens", "list-tokens", "review-ui"]);
+
+const brand = await client.callTool({ name: "get-brand", arguments: {} });
+assert.match(brand.content[0].text, /^# DESIGN.md/);
+assert.match(brand.content[0].text, /---\nname:/);
+assert.match(brand.content[1].text, /\$description/);
 
 const catalog = await client.callTool({ name: "list-tokens", arguments: {} });
 assert.match(catalog.content[0].text, /charte/);
@@ -28,5 +33,5 @@ assert.equal(unknown.isError, true);
 const review = await client.callTool({ name: "review-ui", arguments: {} });
 assert.match(review.content[0].text, /Accessibility/);
 
-console.log("MCP smoke test passed: 4 tools listed, all calls OK");
+console.log("MCP smoke test passed: 5 tools listed, all calls OK");
 await client.close();

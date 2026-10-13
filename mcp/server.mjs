@@ -111,6 +111,26 @@ server.registerTool(
 );
 
 server.registerTool(
+  "get-brand",
+  {
+    title: "Get the charte graphique",
+    description:
+      "Get the brand identity (charte graphique): the DESIGN.md specification (YAML frontmatter with colors/typography/motion + all rules) and the raw DTCG brand tokens. Read this before creating any UI.",
+    inputSchema: {},
+  },
+  async () => {
+    const design = readFileSync(join(ROOT, "DESIGN.md"), "utf8");
+    const brand = readJson(join(TOKENS_DIR, "brand.json"));
+    return {
+      content: [
+        { type: "text", text: `# DESIGN.md\n\n${design}` },
+        { type: "text", text: `# tokens/brand.json (DTCG)\n\n\`\`\`json\n${JSON.stringify(brand, null, 2)}\n\`\`\`` },
+      ],
+    };
+  },
+);
+
+server.registerTool(
   "get-component",
   {
     title: "Get component registry item",
