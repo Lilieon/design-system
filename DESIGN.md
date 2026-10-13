@@ -71,7 +71,7 @@ Light and dark themes. In Tailwind these are exposed as utilities
 | `--ds-card` | `#ffffff` | `#18181b` | `{color.neutral.0}` |
 | `--ds-card-fg` | `#09090b` | `#fafafa` | `{color.neutral.950}` |
 | `--ds-muted` | `#f4f4f5` | `#27272a` | `{color.neutral.100}` |
-| `--ds-muted-fg` | `#71717a` | `#a1a1aa` | `{color.neutral.500}` |
+| `--ds-muted-fg` | `#52525b` | `#a1a1aa` | `{color.neutral.600}` |
 | `--ds-border` | `#e4e4e7` | `#27272a` | `{color.neutral.200}` |
 | `--ds-input` | `#d4d4d8` | `#3f3f46` | `{color.neutral.300}` |
 | `--ds-ring` | `#27272a` | `#d4d4d8` | `{color.neutral.800}` |
@@ -83,7 +83,7 @@ Light and dark themes. In Tailwind these are exposed as utilities
 | `--ds-accent-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
 | `--ds-destructive` | `#dc2626` | `#ef4444` | `{color.danger.600}` |
 | `--ds-destructive-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
-| `--ds-success` | `#16a34a` | `#22c55e` | `{color.success.600}` |
+| `--ds-success` | `#15803d` | `#22c55e` | `{color.success.700}` |
 | `--ds-success-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
 | `--ds-warning` | `#f59e0b` | `#f59e0b` | `{color.warning.500}` |
 | `--ds-warning-fg` | `#09090b` | `#09090b` | `{color.neutral.950}` |
