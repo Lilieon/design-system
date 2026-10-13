@@ -138,8 +138,10 @@ function buildSemanticBlock(semantic, primitivesFlat, indent = "  ") {
       throw new Error(`Semantic token "${key}" must reference a primitive token, got: ${JSON.stringify(entry.$value)}`);
     }
     const refPath = entry.$value.slice(1, -1);
-    const value = resolveValue(primitivesFlat, refPath);
-    lines.push(`${indent}--ds-${toKebab(key)}: ${renderValue(entry.$type, value)};`);
+    resolveValue(primitivesFlat, refPath); // validates the reference exists
+    // Emit var() chains (not resolved values) so runtime overrides of a
+    // charte primitive propagate to every semantic token (theming, Brand Lab).
+    lines.push(`${indent}--ds-${toKebab(key)}: var(--ds-${toKebab(refPath)});`);
   }
   return lines.join("\n");
 }
