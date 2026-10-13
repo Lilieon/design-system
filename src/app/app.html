@@ -1,106 +1,29 @@
-<div class="mx-auto flex max-w-3xl flex-col gap-10 px-6 py-12">
+<div class="mx-auto flex max-w-5xl flex-col gap-10 px-6 py-12">
   <header class="flex items-start justify-between gap-4">
     <div>
-      <h1 class="text-3xl font-semibold tracking-tight">Design System Playground</h1>
-      <p class="mt-1 text-sm text-muted-fg">Live gallery of the component set, in both themes.</p>
+      <h1 class="text-3xl font-semibold tracking-tight">Design System</h1>
+      <nav class="mt-2 flex gap-4 text-sm">
+        <a
+          routerLink="/"
+          routerLinkActive="text-foreground font-medium"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Gallery
+        </a>
+        <a
+          routerLink="/brand-lab"
+          routerLinkActive="text-foreground font-medium"
+          class="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Brand Lab
+        </a>
+      </nav>
     </div>
     <button dsButton variant="outline" (click)="toggleDark()">
       {{ dark() ? 'Light' : 'Dark' }}
     </button>
   </header>
 
-  <section class="flex flex-col gap-3">
-    <h2 class="text-xl font-semibold tracking-tight">Buttons</h2>
-    <div class="flex flex-wrap items-center gap-3">
-      <button dsButton>Primary</button>
-      <button dsButton variant="secondary">Secondary</button>
-      <button dsButton variant="outline">Outline</button>
-      <button dsButton variant="ghost">Ghost</button>
-      <button dsButton variant="destructive">Destructive</button>
-      <button dsButton disabled>Disabled</button>
-    </div>
-    <div class="flex flex-wrap items-center gap-3">
-      <button dsButton size="sm">Small</button>
-      <button dsButton size="md">Medium</button>
-      <button dsButton size="lg">Large</button>
-      <button dsButton size="icon" aria-label="Settings">S</button>
-    </div>
-  </section>
-
-  <section class="flex flex-col gap-3">
-    <h2 class="text-xl font-semibold tracking-tight">Inputs</h2>
-    <div class="flex max-w-sm flex-col gap-2">
-      <ds-label for="email">Email</ds-label>
-      <input id="email" dsInput placeholder="you@example.com" />
-    </div>
-    <div class="flex max-w-sm flex-col gap-2">
-      <ds-label for="handle">Handle</ds-label>
-      <input id="handle" dsInput value="invalid value" aria-invalid="true" />
-    </div>
-    <div class="flex max-w-sm flex-col gap-2">
-      <ds-label for="locked">API key</ds-label>
-      <input id="locked" dsInput value="ds_live_xxx" disabled />
-    </div>
-  </section>
-
-  <section class="flex flex-col gap-3">
-    <h2 class="text-xl font-semibold tracking-tight">Card</h2>
-    <ds-card class="max-w-sm">
-      <ds-card-header>
-        <ds-card-title>Create project</ds-card-title>
-        <ds-card-description>Deploy your new project in one-click.</ds-card-description>
-      </ds-card-header>
-      <ds-card-content>
-        <p class="text-sm text-muted-fg">
-          Components are copied into your project, you own the code.
-        </p>
-      </ds-card-content>
-      <ds-card-footer class="justify-end gap-2">
-        <button dsButton variant="outline" size="sm">Cancel</button>
-        <button dsButton size="sm">Deploy</button>
-      </ds-card-footer>
-    </ds-card>
-  </section>
-
-  <section class="flex flex-col gap-3">
-    <h2 class="text-xl font-semibold tracking-tight">Badges</h2>
-    <div class="flex flex-wrap items-center gap-2">
-      <ds-badge>Default</ds-badge>
-      <ds-badge variant="secondary">Secondary</ds-badge>
-      <ds-badge variant="destructive">Destructive</ds-badge>
-      <ds-badge variant="success">Success</ds-badge>
-      <ds-badge variant="warning">Warning</ds-badge>
-      <ds-badge variant="outline">Outline</ds-badge>
-    </div>
-  </section>
-
-  <section class="flex flex-col gap-3">
-    <h2 class="text-xl font-semibold tracking-tight">Alerts</h2>
-    <div class="flex flex-col gap-4">
-      <ds-alert>
-        <ds-alert-title>Heads up!</ds-alert-title>
-        <ds-alert-description>You can add components to your app.</ds-alert-description>
-      </ds-alert>
-      <ds-alert variant="info">
-        <ds-alert-title>New version available</ds-alert-title>
-        <ds-alert-description>Refresh to update to the latest release.</ds-alert-description>
-      </ds-alert>
-      <ds-alert variant="success">
-        <ds-alert-title>Saved</ds-alert-title>
-        <ds-alert-description>Your changes have been stored.</ds-alert-description>
-      </ds-alert>
-      <ds-alert variant="warning">
-        <ds-alert-title>Storage almost full</ds-alert-title>
-        <ds-alert-description>You are using 92% of your quota.</ds-alert-description>
-      </ds-alert>
-      <ds-alert variant="destructive">
-        <ds-alert-title>Session expired</ds-alert-title>
-        <ds-alert-description>Please sign in again to continue.</ds-alert-description>
-      </ds-alert>
-    </div>
-  </section>
-
-  <footer class="border-t border-border pt-6 text-xs text-muted-fg">
-    Values come from design tokens — never hardcode colors, spacing or durations.
-  </footer>
+  <router-outlet />
 </div>

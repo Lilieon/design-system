@@ -1,36 +1,9 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import {
-  DsAlertComponent,
-  DsAlertDescriptionComponent,
-  DsAlertTitleComponent,
-  DsBadgeComponent,
-  DsButtonComponent,
-  DsCardComponent,
-  DsCardContentComponent,
-  DsCardDescriptionComponent,
-  DsCardFooterComponent,
-  DsCardHeaderComponent,
-  DsCardTitleComponent,
-  DsInputComponent,
-  DsLabelComponent,
-} from '@ds/ui';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { DsButtonComponent } from '@ds/ui';
 
 @Component({
-  imports: [
-    DsAlertComponent,
-    DsAlertDescriptionComponent,
-    DsAlertTitleComponent,
-    DsBadgeComponent,
-    DsButtonComponent,
-    DsCardComponent,
-    DsCardContentComponent,
-    DsCardDescriptionComponent,
-    DsCardFooterComponent,
-    DsCardHeaderComponent,
-    DsCardTitleComponent,
-    DsInputComponent,
-    DsLabelComponent,
-  ],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, DsButtonComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',
 })

@@ -1,0 +1,119 @@
+<div class="grid gap-8 lg:grid-cols-[300px_1fr]">
+  <aside class="flex flex-col gap-6">
+    <section class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold tracking-tight">Charte colors</h2>
+      @for (control of colorControls; track control.variable) {
+        <label class="flex items-center justify-between gap-3 text-sm">
+          <span class="text-muted-foreground">{{ control.label }}</span>
+          <input
+            type="color"
+            class="h-8 w-14 cursor-pointer rounded-md border border-input bg-card"
+            [value]="currentValue(control)"
+            (input)="onColor(control, $event)"
+          />
+        </label>
+      }
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold tracking-tight">Radius</h2>
+      <label class="flex items-center gap-3 text-sm text-muted-foreground">
+        <input type="range" min="0" max="24" step="1" class="w-full" [value]="radius()" (input)="onRadius($event)" />
+        <span class="w-10 shrink-0 text-right tabular-nums">{{ radius() }}px</span>
+      </label>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold tracking-tight">Motion</h2>
+      <label class="flex items-center gap-3 text-sm text-muted-foreground">
+        <input type="range" min="80" max="400" step="10" class="w-full" [value]="duration()" (input)="onDuration($event)" />
+        <span class="w-12 shrink-0 text-right tabular-nums">{{ duration() }}ms</span>
+      </label>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold tracking-tight">Type</h2>
+      <select
+        class="rounded-md border border-input bg-card px-3 py-2 text-sm"
+        (change)="onFont($any($event.target).value)"
+      >
+        @for (font of fontOptions; track font.label) {
+          <option [value]="font.stack" [selected]="font.stack === fontStack()">{{ font.label }}</option>
+        }
+      </select>
+    </section>
+
+    <div class="flex gap-2">
+      <button dsButton size="sm" (click)="copyCss()">{{ copied() ? 'Copied!' : 'Copy CSS' }}</button>
+      <button dsButton variant="outline" size="sm" (click)="reset()">Reset</button>
+    </div>
+    <p class="text-xs text-muted-foreground">
+      Tweaks live in the browser only. When a direction feels right, transpose the exported values
+      into <code class="font-mono">tokens/brand.json</code> and commit.
+    </p>
+  </aside>
+
+  <div class="flex flex-col gap-8">
+    <section class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold tracking-tight">Preview</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button dsButton>Primary</button>
+        <button dsButton variant="secondary">Secondary</button>
+        <button dsButton variant="outline">Outline</button>
+        <button dsButton variant="ghost">Ghost</button>
+        <button dsButton variant="destructive">Destructive</button>
+      </div>
+      <ds-card class="max-w-md">
+        <ds-card-header>
+          <ds-card-title>Card title</ds-card-title>
+          <ds-card-description>Surfaces, borders and radius follow the charte.</ds-card-description>
+        </ds-card-header>
+        <ds-card-content class="flex flex-col gap-3">
+          <div class="flex flex-wrap gap-2">
+            <ds-badge>Default</ds-badge>
+            <ds-badge variant="success">Success</ds-badge>
+            <ds-badge variant="warning">Warning</ds-badge>
+          </div>
+          <div class="flex flex-col gap-2">
+            <ds-label for="lab-input">Label</ds-label>
+            <input id="lab-input" dsInput placeholder="Input radius follows the charte" />
+          </div>
+        </ds-card-content>
+      </ds-card>
+      <ds-alert variant="warning" class="max-w-md">
+        <ds-alert-title>Storage almost full</ds-alert-title>
+        <ds-alert-description>Status colors stay token-driven.</ds-alert-description>
+      </ds-alert>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold tracking-tight">Type specimen</h2>
+      <div class="flex flex-col gap-1">
+        <p class="text-3xl font-semibold tracking-tight">Heading 3xl semibold</p>
+        <p class="text-xl font-medium">Heading xl medium</p>
+        <p class="text-base">Body base — sentences in the charte typeface, at a comfortable measure.</p>
+        <p class="text-sm text-muted-foreground">Small muted text for secondary information.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold tracking-tight">WCAG AA contrast (4.5:1)</h2>
+      <div class="flex flex-wrap gap-6">
+        @for (theme of contrast(); track theme.mode) {
+          <div class="flex flex-col gap-1">
+            <p class="text-xs font-medium uppercase tracking-wide text-muted-foreground">{{ theme.mode }}</p>
+            @for (row of theme.rows; track row.label) {
+              <span
+                [class]="row.pass
+                  ? 'inline-flex items-center gap-2 rounded-md bg-success-100 px-2 py-0.5 text-xs text-success-800'
+                  : 'inline-flex items-center gap-2 rounded-md bg-danger-100 px-2 py-0.5 text-xs text-danger-800'"
+              >
+                {{ row.label }} — {{ row.ratio }}:1 {{ row.pass ? '✓' : '✗' }}
+              </span>
+            }
+          </div>
+        }
+      </div>
+    </section>
+  </div>
+</div>
