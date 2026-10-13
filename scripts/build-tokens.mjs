@@ -227,14 +227,50 @@ export function buildDesignMdSection(primitives, light, dark) {
   ].join("\n");
 }
 
-export function updateDesignMd(section) {
+export function buildDesignMdFrontmatter(brand, light) {
+  const brandFlat = flattenTokens(brand);
+  const lightFlat = flattenTokens(light);
+  const resolve = (key) => resolveValue(brandFlat, lightFlat[key].$value.slice(1, -1));
+  const colorEntry = (key) => `  ${key.replace(/-fg$/, "-foreground")}: "${resolve(key)}"`;
+  const sans = renderValue("fontFamily", resolveValue(brandFlat, "font.sans")).replace(/"/g, "");
+  const mono = renderValue("fontFamily", resolveValue(brandFlat, "font.mono")).replace(/"/g, "");
+  const sizes = Object.keys(flattenTokens({ fontSize: brand.fontSize }))
+    .map((k) => resolveValue(brandFlat, k));
+  const radii = Object.keys(flattenTokens({ radius: brand.radius }))
+    .map((k) => k.replace("radius.", ""))
+    .filter((k) => k !== "none" && k !== "full");
+  const easing = renderValue("cubicBezier", resolveValue(brandFlat, "easing.standard"));
+
+  return [
+    "---",
+    "name: Lilian's design system",
+    "description: Charte graphique shared by all my websites and web apps (AI-readable)",
+    "colors:",
+    ...["bg", "fg", "card", "muted", "border", "primary", "secondary", "accent", "destructive", "success", "warning"].map(colorEntry),
+    "typography:",
+    `  sans: '${sans}'`,
+    `  mono: '${mono}'`,
+    `  scale: ${sizes.join("/")}`,
+    `rounded: ${radii.map((r) => resolveValue(brandFlat, `radius.${r}`)).join("/")}`,
+    "motion:",
+    `  duration: ${resolveValue(brandFlat, "duration.fast")}-${resolveValue(brandFlat, "duration.slow")}`,
+    `  easing: cubic-bezier ${easing.replace("cubic-bezier(", "").replace(")", "")}`,
+    "---",
+  ].join("\n");
+}
+
+export function updateDesignMd(frontmatter, section) {
   if (!existsSync(DESIGN_MD)) return false;
-  const content = readFileSync(DESIGN_MD, "utf8");
+  let content = readFileSync(DESIGN_MD, "utf8");
   const begin = content.indexOf("<!-- tokens:begin -->");
   const end = content.indexOf("<!-- tokens:end -->");
-  if (begin === -1 || end === -1) return false;
-  const updated = content.slice(0, begin) + section + content.slice(end + "<!-- tokens:end -->".length);
-  writeFileSync(DESIGN_MD, updated);
+  if (begin !== -1 && end !== -1) {
+    content = content.slice(0, begin) + section + content.slice(end + "<!-- tokens:end -->".length);
+  }
+  content = content.startsWith("---\n")
+    ? content.replace(/^---\n[\s\S]*?\n---\n/, frontmatter + "\n")
+    : `${frontmatter}\n\n${content}`;
+  writeFileSync(DESIGN_MD, content);
   return true;
 }
 
@@ -246,9 +282,9 @@ function main() {
   mkdirSync(DIST_DIR, { recursive: true });
   writeFileSync(join(DIST_DIR, "tokens.css"), buildTokensCss(brand, light, dark));
   writeFileSync(join(DIST_DIR, "tailwind-theme.css"), buildTailwindTheme(brand, light));
-  const designUpdated = updateDesignMd(buildDesignMdSection(brand, light, dark));
+  const designUpdated = updateDesignMd(buildDesignMdFrontmatter(brand, light), buildDesignMdSection(brand, light, dark));
 
-  console.log("Built dist/tokens.css, dist/tailwind-theme.css" + (designUpdated ? ", DESIGN.md tokens section" : ""));
+  console.log("Built dist/tokens.css, dist/tailwind-theme.css" + (designUpdated ? ", DESIGN.md frontmatter + tokens section" : ""));
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

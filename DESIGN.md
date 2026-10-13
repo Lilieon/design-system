@@ -1,3 +1,28 @@
+---
+name: Lilian's design system
+description: Charte graphique shared by all my websites and web apps (AI-readable)
+colors:
+  bg: "#fafafa"
+  fg: "#09090b"
+  card: "#ffffff"
+  muted: "#f4f4f5"
+  border: "#e4e4e7"
+  primary: "#18181b"
+  secondary: "#f4f4f5"
+  accent: "#2563eb"
+  destructive: "#dc2626"
+  success: "#15803d"
+  warning: "#f59e0b"
+typography:
+  sans: 'Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif'
+  mono: 'ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace'
+  scale: 12px/14px/16px/18px/20px/24px/30px/36px
+rounded: 6px/8px/12px/16px
+motion:
+  duration: 120ms-280ms
+  easing: cubic-bezier 0.4, 0, 0.2, 1
+---
+
 # DESIGN.md
 
 Lilian's design system — the visual language shared by all my websites and web
