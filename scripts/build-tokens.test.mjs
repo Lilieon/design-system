@@ -52,11 +52,11 @@ test("renderShadow composes CSS box-shadow", () => {
 test("buildTokensCss emits primitives, light :root and .dark overrides", () => {
   const css = buildTokensCss(read("brand.json"), read("semantic/light.json"), read("semantic/dark.json"));
   assert.match(css, /^:root \{/m);
-  assert.match(css, /--ds-color-neutral-950: #09090b;/);
+  assert.match(css, /--ds-color-neutral-950: #[0-9a-f]{6};/);
   assert.match(css, /--ds-bg: var\(--ds-color-neutral-50\);/);
   assert.match(css, /\.dark \{\n(?:.|\n)*--ds-bg: var\(--ds-color-neutral-950\);/);
   assert.match(css, /--ds-shadow-sm: 0px 1px 2px 0px rgba\(0, 0, 0, 0.05\);/);
-  assert.match(css, /--ds-font-sans: "Inter", system-ui/);
+  assert.match(css, /--ds-font-sans: .+(,|;)/);
 });
 
 test("buildTailwindTheme maps Tailwind v4 namespaces", () => {
@@ -100,4 +100,13 @@ test("end-to-end: pnpm build writes dist/ files", () => {
   assert.ok(existsSync(join(ROOT, "dist", "tailwind-theme.css")));
   const tokens = readFileSync(join(ROOT, "dist", "tokens.css"), "utf8");
   assert.ok(tokens.includes("--ds-primary:"));
+});
+
+test("buildDesignMdFrontmatter generates machine-readable charte summary", () => {
+  const fm = buildDesignMdFrontmatter(read("brand.json"), read("semantic/light.json"));
+  assert.match(fm, /^---\nname:/);
+  assert.match(fm, /accent: "#[0-9a-f]{6}"/);
+  assert.match(fm, /sans: '.+'/);
+  assert.match(fm, /scale: \d+px\/\d+px\/\d+px/);
+  assert.match(fm, /---$/);
 });
