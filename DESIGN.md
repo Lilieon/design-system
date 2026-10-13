@@ -2,24 +2,24 @@
 name: Lilian's design system
 description: Charte graphique shared by all my websites and web apps (AI-readable)
 colors:
-  bg: "#fafafa"
-  fg: "#09090b"
+  bg: "#f8fafc"
+  fg: "#020617"
   card: "#ffffff"
-  muted: "#f4f4f5"
-  border: "#e4e4e7"
-  primary: "#18181b"
-  secondary: "#f4f4f5"
-  accent: "#2563eb"
+  muted: "#f1f5f9"
+  border: "#e2e8f0"
+  primary: "#0f172a"
+  secondary: "#f1f5f9"
+  accent: "#0369a1"
   destructive: "#dc2626"
   success: "#15803d"
   warning: "#f59e0b"
 typography:
-  sans: 'Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif'
+  sans: 'Inter, system-ui, -apple-system, Segoe UI, sans-serif'
   mono: 'ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace'
   scale: 12px/14px/16px/18px/20px/24px/30px/36px
-rounded: 6px/8px/12px/16px
+rounded: 8px/12px/18px/24px
 motion:
-  duration: 120ms-280ms
+  duration: 140ms-320ms
   easing: cubic-bezier 0.4, 0, 0.2, 1
 ---
 
@@ -36,7 +36,7 @@ come from design tokens (W3C DTCG format) built to CSS custom properties.
 
 ## Identity
 
-- **Feel**: precise, calm, professional. Close to Linear/Vercel-grade polish —
+- **Feel**: fresh, airy, technical. Sky blue accent on cool slate neutrals. Close to Linear/Vercel-grade polish —
   quiet surfaces, strong typography, restrained color, subtle depth.
 - **Voice**: direct sentences, sentence case, no exclamation marks.
 - **Density**: comfortable-first; compact variants exist but never at the cost
@@ -91,27 +91,27 @@ Light and dark themes. In Tailwind these are exposed as utilities
 
 | CSS variable | Light | Dark | References |
 | ------------ | ----- | ---- | ---------- |
-| `--ds-bg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
-| `--ds-fg` | `#09090b` | `#fafafa` | `{color.neutral.950}` |
-| `--ds-card` | `#ffffff` | `#18181b` | `{color.neutral.0}` |
-| `--ds-card-fg` | `#09090b` | `#fafafa` | `{color.neutral.950}` |
-| `--ds-muted` | `#f4f4f5` | `#27272a` | `{color.neutral.100}` |
-| `--ds-muted-fg` | `#52525b` | `#a1a1aa` | `{color.neutral.600}` |
-| `--ds-border` | `#e4e4e7` | `#27272a` | `{color.neutral.200}` |
-| `--ds-input` | `#d4d4d8` | `#3f3f46` | `{color.neutral.300}` |
-| `--ds-ring` | `#27272a` | `#d4d4d8` | `{color.neutral.800}` |
-| `--ds-primary` | `#18181b` | `#fafafa` | `{color.neutral.900}` |
-| `--ds-primary-fg` | `#fafafa` | `#18181b` | `{color.neutral.50}` |
-| `--ds-secondary` | `#f4f4f5` | `#27272a` | `{color.neutral.100}` |
-| `--ds-secondary-fg` | `#18181b` | `#f4f4f5` | `{color.neutral.900}` |
-| `--ds-accent` | `#2563eb` | `#3b82f6` | `{color.brand.600}` |
-| `--ds-accent-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
+| `--ds-bg` | `#f8fafc` | `#020617` | `{color.neutral.50}` |
+| `--ds-fg` | `#020617` | `#f8fafc` | `{color.neutral.950}` |
+| `--ds-card` | `#ffffff` | `#0f172a` | `{color.neutral.0}` |
+| `--ds-card-fg` | `#020617` | `#f8fafc` | `{color.neutral.950}` |
+| `--ds-muted` | `#f1f5f9` | `#1e293b` | `{color.neutral.100}` |
+| `--ds-muted-fg` | `#475569` | `#94a3b8` | `{color.neutral.600}` |
+| `--ds-border` | `#e2e8f0` | `#1e293b` | `{color.neutral.200}` |
+| `--ds-input` | `#cbd5e1` | `#334155` | `{color.neutral.300}` |
+| `--ds-ring` | `#1e293b` | `#cbd5e1` | `{color.neutral.800}` |
+| `--ds-primary` | `#0f172a` | `#f8fafc` | `{color.neutral.900}` |
+| `--ds-primary-fg` | `#f8fafc` | `#0f172a` | `{color.neutral.50}` |
+| `--ds-secondary` | `#f1f5f9` | `#1e293b` | `{color.neutral.100}` |
+| `--ds-secondary-fg` | `#0f172a` | `#f1f5f9` | `{color.neutral.900}` |
+| `--ds-accent` | `#0369a1` | `#0ea5e9` | `{color.brand.600}` |
+| `--ds-accent-fg` | `#f8fafc` | `#020617` | `{color.neutral.50}` |
 | `--ds-destructive` | `#dc2626` | `#ef4444` | `{color.danger.600}` |
-| `--ds-destructive-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
+| `--ds-destructive-fg` | `#f8fafc` | `#020617` | `{color.neutral.50}` |
 | `--ds-success` | `#15803d` | `#22c55e` | `{color.success.700}` |
-| `--ds-success-fg` | `#fafafa` | `#09090b` | `{color.neutral.50}` |
+| `--ds-success-fg` | `#f8fafc` | `#020617` | `{color.neutral.50}` |
 | `--ds-warning` | `#f59e0b` | `#f59e0b` | `{color.warning.500}` |
-| `--ds-warning-fg` | `#09090b` | `#09090b` | `{color.neutral.950}` |
+| `--ds-warning-fg` | `#020617` | `#020617` | `{color.neutral.950}` |
 
 ### Primitive scales
 
